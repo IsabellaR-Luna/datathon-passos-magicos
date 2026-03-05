@@ -4,5 +4,6 @@ pycache__/
 __pycache__/
 *.pyc
 *.pyo
-.venv/
+.venv_tensor/
 venv/
+*.xlsx
