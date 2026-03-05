@@ -11,7 +11,7 @@ Considere os seguintes participantes e suas descricdes:\n{{$participants}}\n
 
 Fluxo:
 
-1) Interprete a pergunta do usuario e gere um plano curto de passos:
+1) Interprete a pergunta do usuario e gere um plano curto de passos
 - Identificar, se houver.
 - Gerar query SQL, se necessario.
 - Executar query SQL, se necessario.

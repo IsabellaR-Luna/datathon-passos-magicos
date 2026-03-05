@@ -15,7 +15,7 @@ TABLE_NAME = f"{settings.DB_SCHEMA_NAME}"
 DB_SCHEMA = f"""
 O Banco de Dados é SQLite, atente-se para utilizar a sintaxe correta. (arquivo: {settings.DB_SCHEMA_NAME})
 
-Tabela disponível:
+Tabela disponível
     Nome: resultados
     Descrição: Essa tabela contém os resultados dos indicadores ESG para as empresas na base.
     Colunas:

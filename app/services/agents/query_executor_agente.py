@@ -7,7 +7,7 @@ import re
 import json
 
 QUERY_EXECUTOR_DESCRIPTION = """
-Executa a query SQL gerada pelo agente Query Generator na base de dados e retorna os resultados.
+Executa a query SQL gerada pelo agente Query Generator na base de dados e retorna os resultados
 """
 
 class QueryExecutorAgent(Agent):

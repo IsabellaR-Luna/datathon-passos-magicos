@@ -4,27 +4,7 @@ import sys
 import logging
 from uuid import uuid4
 from openai.types.chat.chat_completion import ChatCompletion, Choice
-# import openai
-# from openai import FunctionCall
-# from openai import ChatCompletionChunk, ChoiceDeltaFunctionCall, ChoiceDeltaToolCall
-# from openai import ChatCompletionMessageToolCall
-# from semantic_kernel.connectors.ai.chat_completion_client_base import ChatCompletionClientBase
-# from semantic_kernel.contents.chat_message_content import ChatMessageContent
-# from semantic_kernel.connectors.ai.completion_usage import CompletionUsage
-# from semantic_kernel.contents.function_call_content import FunctionCallcontent
-# from semantic_kernel.connectors.ai.function_calling_utils import update_settings_from_function_call_configuration
-# from semantic_kernel.contents.chat_history import AuthorRole, ChatHistory
-# from semantic_kernel.contents.text_content import TextContent
-# from semantic_kernel.exceptions import ServiceInvalidExecutionSettingsError, ServiceInvalidResponseError
-# from semantic_kernel.contents.utils.finish_reason import FinishReason
-# from semantic_kernel.kernel import Kernel
-# from semantic_kernel.connectors.ai.open_ai.prompt_execution_settings.open_ai_prompt_execution_settings import OpenAIChatPromptExecutionSettings
-# from semantic_kernel.contents.streaming_chat_message_content import StreamingChatMessageContent
-# from semantic_kernel.connectors.ai.prompt_execution_settings import PromptExecutionSettings
-# from semantic_kernel.connectors.ai.function_choice_behavior import FunctionChoiceBehavior, FunctionChoiceType
-# from semantic_kernel.connectors.ai.function_call_choice_configuration import FunctionCallChoiceConfiguration
-# from semantic_kernel.contents.function_result_content import FunctionResultContent
-# from openai import AsyncAzureOpenAI
+
 
 # OpenAI (SDK novo – Azure)
 from openai import AsyncAzureOpenAI

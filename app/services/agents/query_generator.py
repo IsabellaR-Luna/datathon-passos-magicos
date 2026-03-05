@@ -37,7 +37,7 @@ Seu propósito é criar APENAS UMA(1) ÚNICA query SQL que melhor responde a per
 
 Regras:
 Sua resposta final deverá ser sempre um JSON com o seguinte parâmetro:
-'sql': '<query SQL gerada>'.
+'sql': '<query SQL gerada>'
 """
 
 # -- Alunos críticos

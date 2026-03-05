@@ -7,7 +7,7 @@ class ResilientChatCompletionService(ChatCompletionClientBase):
 
     """
     Wrapper que tenta usar streaming e, em caso de falha, faz fallback para a
-    chamada nao-streaming e devolve um unico chunk.
+    chamada nao-streaming e devolve um unico chunk
     """
 
     def __init__(self, inner_service):

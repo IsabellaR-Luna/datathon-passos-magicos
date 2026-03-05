@@ -33,7 +33,7 @@ class SummarizerService(SummarizerInterface):
             messages=[
                 {
                     "role": "system",
-                    "content": "Você é um assistente que resume conversas."
+                    "content": "Você é um assistente que resume conversas"
                 },
                 {
                     "role": "user",

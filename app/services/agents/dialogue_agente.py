@@ -9,7 +9,7 @@ Você deve considerar as seguintes diretrizes ao elaborar sua resposta:
 
 1) Leia atentamente a pergunta original do usuario.
 
-2) Considere todas as informações fornecidas pelos outros agentes, incluindo nomes corretos  e resultados de consultas SQL.
+2) Considere todas as informações fornecidas pelos outros agentes, incluindo nomes corretos  e resultados de consultas SQL
 
 3) Entenda os valores possiveis:
 
