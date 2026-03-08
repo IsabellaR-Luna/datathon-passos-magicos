@@ -127,11 +127,6 @@ starlette==0.52.1
 statsmodels==0.14.6
 streamlit==1.55.0
 tenacity==9.1.4
-tensorboard==2.20.0
-tensorboard-data-server==0.7.2
-tensorflow==2.20.0
-tensorflow-hub==0.16.1
-tensorflow-text==2.20.0
 termcolor==3.3.0
 tf_keras==2.20.1
 threadpoolctl==3.6.0
