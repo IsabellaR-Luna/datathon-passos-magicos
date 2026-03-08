@@ -1,9 +1,6 @@
-# render.yaml
-
 services:
-  # API FastAPI
   - type: web
-    name: passos-magicos-api
+    name: passos-magicos
     runtime: python
     region: oregon
     plan: free
@@ -11,26 +8,10 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: GOOGLE_API_KEY
-        sync: false  # Será configurado manualmente no Render
+        sync: true  
       - key: DB_PATH
         value: data/passos_magicos.db
       - key: PYTHONPATH
         value: /opt/render/project/src
     healthCheckPath: /health
-    autoDeploy: true
-
-  # Interface Streamlit 
-  - type: web
-    name: passos-magicos-ui
-    runtime: python
-    region: oregon
-    plan: free
-    buildCommand: pip install streamlit requests
-    startCommand: streamlit run chatbot_ui.py --server.port=$PORT --server.address=0.0.0.0
-    envVars:
-      - key: API_URL
-        fromService:
-          name: passos-magicos-api
-          type: web
-          property: host
     autoDeploy: true

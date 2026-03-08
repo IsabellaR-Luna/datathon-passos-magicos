@@ -1,5 +1,5 @@
 # Dockerfile
-# Imagem para o projeto Passos Mágicos
+# Imagem para o projeto Passos Mágicos (API + Frontend React)
 
 FROM python:3.11-slim
 
@@ -23,10 +23,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copia o código da aplicação
+# Copia o código da aplicação (inclui frontend em app/static/)
 COPY app/ ./app/
 COPY data/ ./data/
-COPY scripts/ ./scripts/
 
 # Cria diretórios necessários
 RUN mkdir -p app/models
@@ -38,5 +37,5 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
 
-# Comando para iniciar a API
+# Comando para iniciar (API + Frontend juntos)
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
