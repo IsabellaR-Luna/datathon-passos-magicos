@@ -46,7 +46,7 @@ Este projeto foi desenvolvido para o **Datathon PÓS TECH** com o objetivo de ap
 │   └── passos_magicos.db
 ├── scripts/
 │   └── database_setup.py
-└── chatbot_ui.py
+
 ```
 
 ## 🚀 Quick Start
