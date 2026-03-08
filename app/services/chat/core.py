@@ -336,7 +336,7 @@ class ResponseFormatter:
     Formata respostas amigáveis a partir dos dados.
     """
     
-    def __init__(self, api_key: str, model_name: str = "gemini-1.5-flash"):
+    def __init__(self, api_key: str, model_name: str):
         """
         Inicializa o formatador.
         
@@ -368,7 +368,7 @@ class ResponseFormatter:
         logger.info("[RESPONSE FORMATTER] Formatando resposta...")
         
         if not query_result.success:
-            return f"Desculpe, ocorreu um erro ao buscar os dados: {query_result.error}"
+            return f"Desculpe, ocorreu um erro ao buscar os dados: tente novamente mais tarde!"
         
         if query_result.row_count == 0:
             return "Não encontrei nenhum resultado para sua consulta."
@@ -399,7 +399,7 @@ class ResponseFormatter:
                 parts = [f"{k}: {v}" for k, v in row.items()]
                 return f"Resultado: {', '.join(parts)}"
         
-        # Lista de resultados
+        
         lines.append(f"Encontrei {result.row_count} resultado(s):\n")
         
         for i, row in enumerate(result.data[:10], 1):
@@ -461,8 +461,6 @@ class ResponseFormatter:
     def format_error(self, error: str) -> str:
         """Formata mensagem de erro amigável."""
         return f"""Desculpe, não consegui processar sua solicitação.
-
-        Erro técnico: {error}
 
         Tente reformular sua pergunta. Exemplos:
         - "Quantos alunos estão no perfil Crítico?"

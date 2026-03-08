@@ -67,10 +67,6 @@ async def lifespan(app: FastAPI):
     logger.info("[API] Encerrando serviços...")
 
 
-# ============================================================================
-# APP
-# ============================================================================
-
 app = FastAPI(
     title="Passos Mágicos API",
     description="API para análise de alunos da Associação Passos Mágicos",

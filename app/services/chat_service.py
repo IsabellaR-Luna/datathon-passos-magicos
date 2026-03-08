@@ -53,7 +53,7 @@ class ChatServiceConfig:
     
     # Google API
     google_api_key: str = ""
-    model_name: str = "gemini-2.0-flash"
+    model_name: str = "gemini-2.5-flash"
     
     # Database
     db_path: str = "data/passos_magicos.db"
@@ -314,46 +314,3 @@ class ChatService:
             return result.data
         return []
 
-
-if __name__ == "__main__":
-   
-    
-    # Configura API key (defina a variável de ambiente GOOGLE_API_KEY)
-    api_key = os.getenv("GOOGLE_API_KEY")
-    
-    if not api_key:
-        print("ERRO: Defina a variável de ambiente GOOGLE_API_KEY")
-        print("export GOOGLE_API_KEY='sua-api-key-aqui'")
-        exit(1)
-    
-    # Cria serviço
-    config = ChatServiceConfig(
-        google_api_key=api_key,
-        db_path="data/passos_magicos.db"
-    )
-    
-    service = ChatService(config)
-    
-    # Testa algumas perguntas
-    print("\n" + "=" * 70)
-    print("TESTE DO CHAT SERVICE")
-    print("=" * 70)
-    
-    perguntas = [
-        "Quantos alunos temos em cada perfil?",
-        "Quais são os 3 alunos com menor IAA?",
-        "Olá, como você pode me ajudar?"
-    ]
-    
-    for pergunta in perguntas:
-        print(f"\n{'='*70}")
-        print(f"PERGUNTA: {pergunta}")
-        print("=" * 70)
-        
-        response = service.chat(pergunta)
-        
-        print(f"\nRESPOSTA:")
-        print(response.message)
-        
-        if response.query_used:
-            print(f"\nSQL USADO: {response.query_used}")
