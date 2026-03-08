@@ -17,3 +17,5 @@ numpy
 # Utilities
 python-dotenv
 requests
+scipy
+pydantic
