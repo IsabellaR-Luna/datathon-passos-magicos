@@ -24,9 +24,6 @@ from functools import partial
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 
-# ============================================================================
-# CONFIGURAÇÃO DE LOGGING
-# ============================================================================
 
 logging.basicConfig(
     level=logging.INFO,
@@ -34,10 +31,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-
-# ============================================================================
-# DATACLASSES DE CONFIGURAÇÃO E RESULTADO
-# ============================================================================
 
 @dataclass
 class TrainerConfig:

@@ -55,10 +55,6 @@ from app.services.clustering.core import (
 )
 
 
-# ============================================================================
-# CONFIGURAÇÃO DE LOGGING
-# ============================================================================
-
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -130,10 +126,7 @@ class ClusterService:
         # Tenta carregar modelo existente
         self._try_load_latest_model()
     
-    # ========================================================================
-    # TREINO
-    # ========================================================================
-    
+
     def train(self, df: pd.DataFrame) -> TrainingResult:
         """
         Pipeline completo de treino.
@@ -181,10 +174,9 @@ class ClusterService:
             self._last_train_date = datetime.now()
             self._accumulated_samples = 0
             
-            logger.info("=" * 70)
             logger.info("[CLUSTER SERVICE] PIPELINE DE TREINAMENTO CONCLUÍDO")
             logger.info(f"[CLUSTER SERVICE] Versão do modelo: {result.model_version}")
-            logger.info("=" * 70)
+
             
             return result
             
