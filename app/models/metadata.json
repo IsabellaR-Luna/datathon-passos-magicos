@@ -1,0 +1,26 @@
+{
+  "features": [
+    "IAA",
+    "IEG",
+    "IPS",
+    "IDA",
+    "IPV",
+    "IAN",
+    "Defas"
+  ],
+  "n_samples": 860,
+  "n_clusters": 12,
+  "best_params": {
+    "min_cluster_size": 14,
+    "min_samples": 2,
+    "n_components": 3,
+    "n_neighbors": 16,
+    "random_state": 42
+  },
+  "trained_at": "2026-03-04T17:04:36.852629",
+  "hyperopt_max_evals": 25,
+  "label_range": [
+    3,
+    5
+  ]
+}

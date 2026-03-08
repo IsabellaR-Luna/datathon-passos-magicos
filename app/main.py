@@ -15,7 +15,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from app.routes import health_router, cluster_router, chat_router
+
+from app.routes import health_router, cluster_router, chat_router, monitoring_router
 from app.routes import cluster as cluster_module
 from app.routes import chat as chat_module
 from app.services.chat_service import ChatService, ChatServiceConfig
@@ -71,6 +72,10 @@ async def lifespan(app: FastAPI):
     logger.info("[API] Encerrando serviços...")
 
 
+# ============================================================================
+# APP
+# ============================================================================
+
 app = FastAPI(
     title="Passos Mágicos API",
     description="API para análise de alunos da Associação Passos Mágicos",
@@ -91,7 +96,12 @@ app.add_middleware(
 app.include_router(health_router)
 app.include_router(cluster_router)
 app.include_router(chat_router)
+app.include_router(monitoring_router)
 
+
+# ============================================================================
+# FRONTEND
+# ============================================================================
 
 @app.get("/")
 async def serve_frontend():
@@ -109,6 +119,10 @@ async def api_info():
         "health": "/health"
     }
 
+
+# ============================================================================
+# MAIN
+# ============================================================================
 
 if __name__ == "__main__":
     

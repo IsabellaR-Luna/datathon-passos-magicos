@@ -7,7 +7,7 @@ import pytest
 from unittest.mock import Mock, patch
 from fastapi.testclient import TestClient
 
-from app.main import app
+from app.main_2 import app
 from app.routes import cluster as cluster_module
 from app.routes import chat as chat_module
 from app.services.chat.core import QueryExecutor

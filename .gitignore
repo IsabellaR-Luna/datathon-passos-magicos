@@ -7,3 +7,5 @@ __pycache__/
 .venv_tensor/
 venv/
 *.xlsx
+
+notebook_testes.ipynb
