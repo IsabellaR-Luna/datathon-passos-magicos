@@ -432,7 +432,7 @@ def get_drift_service() -> DriftService:
         if excel_path is None:
             raise FileNotFoundError("Arquivo Excel não encontrado")
         
-        config = DriftConfig(excel_path: str = 'data/BASE_DE_DADOS_PEDE_2024_DATATHON.xlsx')
+        config = DriftConfig(excel_path=excel_path)
         drift_service = DriftService(config)
     
     return drift_service
