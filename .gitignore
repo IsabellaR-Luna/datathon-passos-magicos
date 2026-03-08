@@ -6,6 +6,6 @@ __pycache__/
 *.pyo
 .venv_tensor/
 venv/
-*.xlsx
+
 
 notebook_testes.ipynb
