@@ -373,17 +373,17 @@ class ResponseFormatter:
         if query_result.row_count == 0:
             return "Não encontrei nenhum resultado para sua consulta."
         
-        try:
-            # Para poucos resultados, formata diretamente
-            if query_result.row_count <= 5:
-                return self._format_simple(question, query_result)
+        # try:
+        #     # Para poucos resultados, formata diretamente
+        #     if query_result.row_count <= 5:
+        #         return self._format_simple(question, query_result)
             
             # Para muitos resultados, usa LLM para resumir
-            return self._format_with_llm(question, query_result)
+        return self._format_with_llm(question, query_result)
             
-        except Exception as e:
-            logger.error(f"[RESPONSE FORMATTER] Erro: {str(e)}")
-            return self._format_simple(question, query_result)
+        # except Exception as e:
+        #     logger.error(f"[RESPONSE FORMATTER] Erro: {str(e)}")
+        #     return self._format_simple(question, query_result)
     
     def _format_simple(self, question: str, result: QueryResult) -> str:
         """Formatação simples sem LLM."""
@@ -415,14 +415,6 @@ class ResponseFormatter:
         """Formatação com LLM para resumir."""
         prompt = f"""Você é um assistente pedagógico da Associação Passos Mágicos.
 
-        O professor perguntou: "{question}"
-
-        Os dados retornados foram:
-        {result.data[:20]}
-
-        Total de registros: {result.row_count}
-        Colunas: {result.columns}
-
         Você deve considerar as seguintes diretrizes ao elaborar sua resposta:
 
         1) Leia atentamente a pergunta original do usuario.
@@ -437,9 +429,22 @@ class ResponseFormatter:
 
         4) Se a pergunta do usuario nao puder ser respondida com as informações disponiveis, informe educadamente que nao foi possivel encontrar a resposta.
 
-        5) NUNCA mencione os nomes dos agentes, cédigos  ou detalhes técnicos sobre o funcionamento do sistema na sua resposta ao usuario.
+        5) NUNCA mencione os nomes dos agentes, códigos ou detalhes técnicos sobre o funcionamento do sistema na sua resposta ao usuario.
 
         6) Revise sua resposta para garantir precisao e clareza antes de envia-la ao usuario.
+
+        7) Fique atento as saudações e formas de se comunicar (Olá, Oi!, etc), lembre-se que voce é um assistente pedagógico da Associação Passos Mágicos, e deve manter um tom amigável, engajante e proativo.
+
+        8) Se a pergunta do usuário for apenas uma saudação (Ex: "Olá", "Oi", "Bom dia"), responda de forma amigável e engajante, sem mencionar que é um assistente ou detalhes técnicos. Exemplo de resposta: "Olá! Como posso ajudar você hoje? Se tiver alguma dúvida sobre os alunos ou precisar de informações, é só perguntar!"
+
+        O professor perguntou: "{question}"
+
+        Os dados retornados foram:
+        {result.data}
+
+        Total de registros: {result.row_count}
+        Colunas: {result.columns}
+
 
         Observações:
         NAO responda perguntas fora do escopo. NAO dê ao usuário informações que nao estejam relacionadas a esse tema.
