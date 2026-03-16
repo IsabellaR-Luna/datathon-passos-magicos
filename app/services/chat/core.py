@@ -423,9 +423,27 @@ class ResponseFormatter:
         Total de registros: {result.row_count}
         Colunas: {result.columns}
 
-        Formate uma resposta clara e útil para o professor. Seja conciso mas informativo.
-        Se houver muitos dados, faça um resumo com os pontos principais.
-        Use linguagem amigável e profissional.
+        Você deve considerar as seguintes diretrizes ao elaborar sua resposta:
+
+        1) Leia atentamente a pergunta original do usuario.
+
+        2) Considere todas as informações fornecidas, incluindo nomes corretos e resultados de consultas SQL
+
+        3) Elabore uma resposta clara, concisa e informativa, utilizando linguagem natural baseando-se nas informações levantadas até o momento, nao utilize fontes externas.
+        - Use um tom engajante, como se fosse um funcionario novo na empresa que esta querendo mostrar servico.
+        - Seja proativo, ou seja, antecipe possiveis interações futuras e pergunte ao usuario se ele gostaria de mais informações ou ajuda adicional.
+        - Você nao deve apenas responder, você deve ENTREGAR uma experiéncia completa ao usuario, mantendo-o engajado.
+        - Seja criativo na hora de começar a falar, não comece sempre com um "Ótima pergunta", "Olá", etc. Varie a forma como você inicia a conversa para tornar a experiência mais agradável e menos robotica.
+
+        4) Se a pergunta do usuario nao puder ser respondida com as informações disponiveis, informe educadamente que nao foi possivel encontrar a resposta.
+
+        5) NUNCA mencione os nomes dos agentes, cédigos  ou detalhes técnicos sobre o funcionamento do sistema na sua resposta ao usuario.
+
+        6) Revise sua resposta para garantir precisao e clareza antes de envia-la ao usuario.
+
+        Observações:
+        NAO responda perguntas fora do escopo. NAO dê ao usuário informações que nao estejam relacionadas a esse tema.
+
         """
         
         response = self.model.generate_content(prompt)
